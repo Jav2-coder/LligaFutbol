@@ -16,14 +16,18 @@ import org.xml.sax.SAXException;
  */
 public class App {
 
-	private static String FITXER = "/lligaR-1.xml";
+	private static String [] FITXERS = { "/lligaR-1.xml", "/lligaR-2.xml", "/lligaR-3.xml" };
 
 	public static void main(String[] args) throws ParserConfigurationException, SAXException, IOException {
 
 		SAXParserFactory spf = SAXParserFactory.newInstance();
-		
+
 		SAXParser parser = spf.newSAXParser();
-		
-		parser.parse(new File(App.class.getResource(FITXER).getFile()), new Processar());
+
+		for (String fitxer : FITXERS) {
+			
+			parser.parse(new File(App.class.getResource(fitxer).getFile()), new Processar());
+			
+		}
 	}
 }
