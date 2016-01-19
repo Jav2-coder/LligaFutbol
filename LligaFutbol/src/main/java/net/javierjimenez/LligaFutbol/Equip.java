@@ -39,11 +39,11 @@ public class Equip implements Comparable<Equip>{
 		
 		if (punts > o.getPunts()) {
 			
-			return 1;
+			return -1;
 			
 		} else if (punts < o.getPunts()) {
 			
-			return -1;
+			return 1;
 		} 
 		   
 		return 0;

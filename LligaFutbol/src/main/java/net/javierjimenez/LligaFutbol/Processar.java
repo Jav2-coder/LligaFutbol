@@ -21,15 +21,18 @@ public class Processar extends DefaultHandler {
 	
 	HashMap<String, Equip> equips = new HashMap<String, Equip>();
 	
-	private  List<Equip> lliga = new ArrayList<Equip>();
+	private  List<Equip> lliga;
 	
 	public void endDocument() throws SAXException {
 
-		for (Equip e : equips.values()){
+		lliga = new ArrayList<Equip>(equips.values());
+		
+		System.out.println("Resultat");
+		System.out.println();
+		
+		for (int i = 0; i < lliga.size(); i++){
 			
-			System.out.println("Equip " + e.getNom() + ": " + e.getPunts() + " punts");
-			
-			lliga.add(e);
+			System.out.println("Equip " + lliga.get(i).getNom() + ": " + lliga.get(i).getPunts() + " punts");
 			
 		}
 		
@@ -82,6 +85,7 @@ public class Processar extends DefaultHandler {
 		
 		if (partit && resultat){
 			gols = Integer.parseInt(new String (ch, start, length));
+			System.out.println("Equip " + nom + " - " + gols + " Gol(s)");
 		}
 	}
 	
@@ -94,6 +98,7 @@ public class Processar extends DefaultHandler {
 			nomEquip = false;
 			break;
 		case "partit":
+			System.out.println();
 			partit = false;
 			break;
 		case "jornada":
