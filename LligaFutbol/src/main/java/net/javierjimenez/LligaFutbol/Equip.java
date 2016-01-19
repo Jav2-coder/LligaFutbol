@@ -1,16 +1,19 @@
 package net.javierjimenez.LligaFutbol;
 
-public class Equip {
+public class Equip implements Comparable<Equip>{
+
+	@Override
+	public String toString() {
+		return "Equip [nomEquip=" + nomEquip + ", punts=" + punts + "]";
+	}
 
 	private String nomEquip;
 	private int punts;
-	private int gols;
 	
 	public Equip(String n) {
 		
 		nomEquip = n;
 		punts = 0;
-		gols = 0;
 		
 	}
 	
@@ -29,7 +32,20 @@ public class Equip {
 	public void setPunts(int p) {
 		
 		punts = punts + p;
-		
 	}
-	
+
+	@Override
+	public int compareTo(Equip o) {
+		
+		if (punts > o.getPunts()) {
+			
+			return 1;
+			
+		} else if (punts < o.getPunts()) {
+			
+			return -1;
+		} 
+		   
+		return 0;
+	}
 }
