@@ -1,7 +1,7 @@
 package net.javierjimenez.LligaFutbol;
 
-import java.io.File;
 import java.io.IOException;
+import java.io.InputStream;
 
 import javax.xml.parsers.ParserConfigurationException;
 import javax.xml.parsers.SAXParser;
@@ -26,7 +26,9 @@ public class App {
 
 		for (String fitxer : FITXERS) {
 			
-			parser.parse(new File(App.class.getResource(fitxer).getFile()), new Processar());
+			InputStream File = App.class.getResourceAsStream(fitxer);
+			
+			parser.parse(File, new Processar());
 			
 		}
 	}
