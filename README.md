@@ -1,6 +1,6 @@
 # Tasca 6: Lliga dels colors
 
-Per poder fer servir el programa, s'han de sustituir els xml ja existents.
+Per poder fer servir el programa, s'han de sustituir els xml ja existents (han de ser tres arxius sempre).
 
 # Resultat
 
