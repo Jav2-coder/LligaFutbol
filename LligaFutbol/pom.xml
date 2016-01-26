@@ -35,7 +35,7 @@
 							<mainClass>net.javierjimenez.LligaFutbol.App</mainClass>
 						</manifest>
 					</archive>
-				</configuration>
+				</configuration>jar
 			</plugin>
 		</plugins>
 	</build>
